@@ -1,0 +1,82 @@
+//meminta request data
+GET http://localhost:5000/users
+
+###
+//membuat user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Dwi Bagia",
+    "email": "sentosa@gmail.com",
+    "password": "123456",
+    "confPassword":"123456",
+    "role":"admin"
+}
+
+
+###
+///login
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "haikal@gmail.com",
+    "password": "123456"
+}
+
+###
+//mengecek status login dan role loginnya sebagai apa
+GET http://localhost:5000/me
+
+###
+// cek logout
+DELETE  http://localhost:5000/logout
+
+###
+//liat materi
+GET  http://localhost:5000/materis
+
+###
+//tambah materi
+POST http://localhost:5000/materis
+Content-Type: application/json
+
+{
+    "nama_materi" : "Materi test 123",
+    "link_materi" : "http://djawdjwaodjawdo.com",
+    "mata_kuliah": "naon weh",
+    "tenggat_waktu": "2022-12-26"
+}
+
+###
+//liat jadwal dosen
+GET http://localhost:5000/jadwal_dosen
+
+###
+//tambah jadwal dosen
+POST  http://localhost:5000/jadwal_dosen
+Content-Type: application/json
+
+{
+    "mata_kuliah" : "PPAW",
+    "kelas" : "B",
+    "sks": "1",
+    "ruang": "4.09",
+    "hari": "Rabu",
+    "waktu": "14.20"
+}
+
+###
+PATCH  http://localhost:5000/materis/70b7e10e-e6f1-471b-817e-3937417ef7d1
+Content-Type: application/json
+
+{
+    "nama_materi" : "Materi Updated",
+    "link_materi" : "http://djawdjwaodjawdo.com",
+    "mata_kuliah": "ppaw",
+    "tenggat_waktu": "2022-12-25"
+}
+
+###
+DELETE http://localhost:5000/materis/12984554-3382-4f6a-b3f3-94666ee6f97c
